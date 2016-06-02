@@ -30,8 +30,8 @@
     </div>
     <div>
         <ul class="nav navbar-nav">
-          <li class="active"><a href="">申请大屏幕</a></li>
-          <li><a href="">查看大屏幕</a></li>
+          <li class="active"><a href="#">申请大屏幕</a></li>
+          <li><a href="__URL__/show">查看大屏幕</a></li>
           <li><a href="">管理大屏幕</a></a></li>
         </ul>
     </div>
