@@ -262,6 +262,27 @@ input:focus {
 }
 
 .container{
-	max-width: 768px;
+	max-width: 960px;
 	padding: 10px;
+
+}
+.panel-heading{
+	font-size: 16px;
+	font-weight: bolder;
+}
+.row{
+	margin-bottom: 10px;
+}
+.col-md-2{
+	text-align: left;
+}
+.sub{
+	background-color: red;
+	border-radius: 5px;
+	border:0px;
+	text-align: center;
+	height: 50px;
+	line-height: 50px;
+	color: #FFFFFF;
+	font-size: 18px;
 }
