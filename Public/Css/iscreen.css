@@ -260,3 +260,8 @@ input:focus {
 	height:auto;
 	margin:20px auto;
 }
+
+.container{
+	max-width: 768px;
+	padding: 10px;
+}
