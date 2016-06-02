@@ -17,4 +17,10 @@ class IndexAction extends Action {
       //显示模板
       $this->display();
     }
+
+    //大屏幕展示
+    public function Show(){
+      //显示模板
+      $this->display();
+    }
 }
