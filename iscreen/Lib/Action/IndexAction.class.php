@@ -14,8 +14,41 @@ class IndexAction extends Action {
 
     //申请页
     public function Appl(){
-      //显示模板
-      $this->display();
+      //是否提交
+      if($this->isPost()){
+        //接收变量
+        $data['title'] =  I("post.title");
+        $data['topic'] =  I("post.topic");
+        $data['stime'] =  I("post.stime");
+        $data['ttime'] =  I("post.ttime");
+        $data['area']  =  I("post.area");
+        $data['zb']    =  I("post.zb");
+        $data['uid']   =  I("post.uid");
+        $data['phone'] =  I("post.phone");
+        $data['cs']    =  I("post.cs");
+        $data['vid']   =  I("post.vid");
+        $data['auid']  =  I("post.auid");
+        $data['qid']   =  I("post.qid");
+        $data['email'] =  I("post.email");
+        $data['renshu']=  I("post.renshu");
+        //数据处理
+        $screen = M("screen");
+        //增加数据
+        $rst = $screen->add($data);
+        //判断结果
+        if($rst){
+          //申请成功
+          $this->success("申请成功，等待审核",U("Index/index"));
+        }else{
+          //申请失败
+          $this->error("申请失败，请重试",U("Index/appl"));
+        }
+      }else{
+        //获取城市
+        $this->cs = "1";
+        //显示模板
+        $this->display();
+      }//判断是否提交POST请求
     }
 
     //大屏幕展示

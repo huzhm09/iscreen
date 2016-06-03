@@ -17,6 +17,9 @@
   <link rel="stylesheet" type="text/css" href="__PUBLIC__/Css/iscreen.css">
   <!--tanchuang js-->
   <script type="text/javascript" src="__PUBLIC__/Layer/layer.js"></script>
+  <!--date js-->
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/Date/jquery.datetimepicker.css"/ >
+  <script src="__PUBLIC__/Date/build/jquery.datetimepicker.full.js"></script>
 </head>
 
 
@@ -37,7 +40,7 @@
     </div>
   </nav>
   <!--页面主要内容-->
-  <form class="form-horizontal" role="form" id="form">
+  <form class="form-horizontal" role="form" id="form" method="post" action="__URL__/appl">
   <div class="panel panel-default">
     <!--panel title-->
     <div class="panel-heading">基本活动信息</div>
@@ -131,6 +134,15 @@
           <div class="col-md-2"><span>*与系统一致</span></div>
       </div>
 
+      <!--申请人邮箱-->
+      <div class="row">
+          <div class="col-md-2"><label>申请人邮箱</label></div>
+          <div class="col-md-8">
+            <input type="text" name="email" id="email" class="form-control" placeholder="请输入申请人邮箱">
+          </div>
+          <div class="col-md-2"><span>*多个以英文逗号分隔</span></div>
+      </div>
+
       <!--申请人电话-->
       <div class="row">
           <div class="col-md-2"><label>申请人电话</label></div>
@@ -181,12 +193,16 @@
   <!--panel结束-->
   </div>
   <!--按钮区域-->
-  <input type='hidden' value='' name='cs'>
+  <input type='hidden' value='<?php echo ($cs); ?>' name='cs'>
   <div class="sub">确认在线申请</div>
   </form>
 </div>
 <script type="text/javascript">
 $(document).ready(function(){
+  //时间控件
+  $('#stime').datetimepicker({lang:'ch'});
+  $('#ttime').datetimepicker({lang:'ch'});
+  //提交表单
   $(".sub").click(function(){
       //获取参数
       var title = $("#title").val();
@@ -197,10 +213,14 @@ $(document).ready(function(){
       var zb    = $("#zb").val();
       var uid   = $("#uid").val();
       var phone = $("#phone").val();
+      var email = $("#email").val();
       //判断参数
-      if(title=='' || topic=="" || stime=="" || ttime=="" || area=="" || zb=="" || uid=="" || phone==""){
+      if(title=='' || topic=="" || stime=="" || ttime=="" || area=="" || zb=="" || uid=="" || phone=="" || email==""){
         //提示文字
         layer.msg("必填信息不完整");
+      }else{
+        //提交表达
+        $("#form").submit();
       }
   });
 });
