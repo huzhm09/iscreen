@@ -35,34 +35,16 @@
         </ul>
     </div>
   </nav>
-  <!--大屏幕展示-->
-  <div class="row">
-    <volist name="list" id="dpm">
-    <php>
-      if($dpm['eid']!=''){
-        $url = "http://screen.weibo.com/eventdetail.php?eid=".$dpm['eid'];
-      }else{
-        $url = "__URL__/action/t/".urlencode($dpm['topic']);
-      }
-    </php>
-    <div class="col-md-4">
-      <p class='titles'>{$dpm.title|msubstr=0,16} </p>
-        <ul class="list-unstyled">
-          <li>关键字：
-            <a href='{$url}' target="_blank">{$dpm.topic}</a>
-          </li>
-          <li>学校： <a href="__URL__/school/s/{$dpm.area}">{$dpm.area}</a></li>
-          <li>SP号码：{$dpm.sp}</li>
-          <li>开始时间：{$dpm.stime}</li>
-          <li>结束时间：{$dpm.ttime}</li>
-        </ul>
-    </div>
-    </volist>
-    <p style="clear:both"></p>
-    <!--输出page页面-->
-    {$show}
-  </div>
-  <!--box over-->
+  <!--show topic-->
+  <div id="wb"></div>
+  <script type="text/javascript">
+  (function(){
+    var key = encodeURI('{$key}');
+    document.getElementById('wb').innerHTML = '<iframe src="http://v.t.sina.com.cn/widget/widget_topic_width.php?tags=' + key + '&rightwidth=250&height=700&width=960&widgetcolor=f2f2f2&leftcolor=333&leftbgcolor=fff&leftlinkcolor=013979&rightcolor=333&rightbgcolor=fafafa&rightlinkcolor=013979" width="960" height="700" scrolling="no" frameborder="0"></iframe>';
+
+  })();
+  </script></div>
+  <p style="clear:both"></p>
 </div>
 </body>
 </html>
