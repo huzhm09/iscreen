@@ -154,26 +154,7 @@ input:focus {
 	font-size:14px;
 	padding-left:20px;
 }
-#title,#topic{
-	height:22px;
-	line-height:22px;
-	width:400px;
-}
-#area,#phone{
-	height:22px;
-	line-height:22px;
-	width:200px;
-}
-#stime,#ttime{
-	height:22px;
-	line-height:22px;
-	width:100px;
-}
-#zb,#uid,#email,#vid,#qid,#auid{
-	height:22px;
-	line-height:22p;
-	width:400px;
-}
+
 .title{
 	height:80px;
 	line-height:80px;

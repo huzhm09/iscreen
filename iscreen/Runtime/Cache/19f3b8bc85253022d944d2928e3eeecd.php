@@ -15,8 +15,8 @@
   <script type="text/javascript" src="__PUBLIC__/Bootstrap/js/bootstrap.js"></script>
   <!--page css-->
   <link rel="stylesheet" type="text/css" href="__PUBLIC__/Css/iscreen.css">
-  <!--date js-->
-  <script type="text/javascript" src="__PUBLIC__/Js/jquery.date.js"></script>
+  <!--tanchuang js-->
+  <script type="text/javascript" src="__PUBLIC__/Layer/layer.js"></script>
 </head>
 
 
@@ -47,7 +47,7 @@
         <div class="row">
           <div class="col-md-2"><label>活动名称</label></div>
           <div class="col-md-8">
-            <input type="text" name="title" class="form-control" placeholder="请输入活动标题">
+            <input type="text" name="title" id="title" class="form-control" placeholder="请输入活动标题">
           </div>
           <div class="col-md-2"><span>*20个字符以内</span></div>
         </div>
@@ -56,7 +56,7 @@
         <div class="row">
           <div class="col-md-2"><label>活动话题</label></div>
           <div class="col-md-8">
-            <input type="text" name="topic" class="form-control" placeholder="请输入活动话题">
+            <input type="text" name="topic" id="topic" class="form-control" placeholder="请输入活动话题">
           </div>
           <div class="col-md-2"><span>*10个字符以内</span></div>
         </div>
@@ -65,7 +65,7 @@
         <div class="row">
           <div class="col-md-2"><label>开始时间</label></div>
           <div class="col-md-4">
-            <input type="text" name="stime" class="form-control" placeholder="请选择开始时间" id="st">
+            <input type="text" name="stime" id="stime" class="form-control" placeholder="请选择开始时间" id="st">
           </div>
           <div class="col-md-2"><span></span></div>
         </div>
@@ -74,7 +74,7 @@
         <div class="row">
           <div class="col-md-2"><label>结束时间</label></div>
           <div class="col-md-4">
-            <input type="text" name="ttime" class="form-control" placeholder="请选择结束时间" id="tt">
+            <input type="text" name="ttime" id="ttime" class="form-control" placeholder="请选择结束时间" id="tt">
           </div>
           <div class="col-md-2"><span></span></div>
         </div>
@@ -83,7 +83,7 @@
         <div class="row">
           <div class="col-md-2"><label>学校名称</label></div>
           <div class="col-md-8">
-            <input type="text" name="area" class="form-control">
+            <input type="text" name="area" id="area" class="form-control">
           </div>
           <div class="col-md-2"><span>*与注册学校一致</span></div>
         </div>
@@ -92,7 +92,7 @@
         <div class="row">
           <div class="col-md-2"><label>活动规模</label></div>
           <div class="col-md-8">
-            <select class="form-control" name="renshu">
+            <select class="form-control" name="renshu" id="renshu">
                 <option value="0-50">0-50</option>
                 <option value="50-100">50-100</option>
                 <option value="100-50">100-500</option>
@@ -117,7 +117,7 @@
       <div class="row">
           <div class="col-md-2"><label>主办方名称</label></div>
           <div class="col-md-8">
-            <input type="text" name="zb" class="form-control" placeholder="请输入主办方名称">
+            <input type="text" name="zb" id="zb" class="form-control" placeholder="请输入主办方名称">
           </div>
           <div class="col-md-2"><span></span></div>
       </div>
@@ -126,7 +126,7 @@
       <div class="row">
           <div class="col-md-2"><label>申请人UID</label></div>
           <div class="col-md-8">
-            <input type="text" name="uid" class="form-control">
+            <input type="text" name="uid" id="uid" class="form-control">
           </div>
           <div class="col-md-2"><span>*与系统一致</span></div>
       </div>
@@ -135,7 +135,7 @@
       <div class="row">
           <div class="col-md-2"><label>申请人电话</label></div>
           <div class="col-md-8">
-            <input type="text" name="phone" class="form-control" placeholder="请输入申请人电话">
+            <input type="text" name="phone" id="phone" class="form-control" placeholder="请输入申请人电话">
           </div>
           <div class="col-md-2"><span></span></div>
       </div>
@@ -154,7 +154,7 @@
       <div class="row">
           <div class="col-md-2"><label>绑定投票</label></div>
           <div class="col-md-8">
-            <input type="text" name="vid" class="form-control" placeholder="若无，请勿输入">
+            <input type="text" name="vid" id="vid" class="form-control" placeholder="若无，请勿输入">
           </div>
           <div class="col-md-2"><span>*格式为：1:123456,2:234567</span></div>
       </div>
@@ -163,7 +163,7 @@
       <div class="row">
           <div class="col-md-2"><label>添加管理</label></div>
           <div class="col-md-8">
-            <input type="text" name="auid" class="form-control" placeholder="若无，请勿输入">
+            <input type="text" name="auid" id="auid" class="form-control" placeholder="若无，请勿输入">
           </div>
           <div class="col-md-2"><span>*格式为：1:123456,2:234567</span></div>
       </div>
@@ -172,7 +172,7 @@
       <div class="row">
           <div class="col-md-2"><label>绑定微群</label></div>
           <div class="col-md-8">
-            <input type="text" name="qid" class="form-control" placeholder="若无，请勿输入">
+            <input type="text" name="qid" id="qid" class="form-control" placeholder="若无，请勿输入">
           </div>
           <div class="col-md-2"><span>*格式为：1:123456,2:234567</span></div>
       </div>
@@ -185,9 +185,25 @@
   <div class="sub">确认在线申请</div>
   </form>
 </div>
-
-<!--时间控件-->
-
-
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".sub").click(function(){
+      //获取参数
+      var title = $("#title").val();
+      var topic = $("#topic").val();
+      var stime = $("#stime").val();
+      var ttime = $("#ttime").val();
+      var area  = $("#area").val();
+      var zb    = $("#zb").val();
+      var uid   = $("#uid").val();
+      var phone = $("#phone").val();
+      //判断参数
+      if(title=='' || topic=="" || stime=="" || ttime=="" || area=="" || zb=="" || uid=="" || phone==""){
+        //提示文字
+        layer.msg("必填信息不完整");
+      }
+  });
+});
+</script>
 </body>
 </html>
