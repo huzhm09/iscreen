@@ -1,0 +1,7 @@
+[ 2016-06-05T09:56:33+08:00 ] 0.0.0.0 /screen/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001265s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.034042s ]
+NOTIC: [2048] Declaration of IndexAction::Show() should be compatible with that of Action::show() E:\www\screen\iscreen\Lib\Action\IndexAction.class.php 第 109 行.
+ERR: Unknown database 'iscreen'
+
